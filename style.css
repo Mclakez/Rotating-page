@@ -1,0 +1,160 @@
+:root {
+  /* Text colors */
+  --very-dark-desaturated-blue: #333;
+  --soft-red: hsl(14, 88%, 65%);
+  --very-dark-grayish-blue: #222;
+  --dark-grayish-blue: hsl(240, 6%, 50%);
+  
+  /* Background gradient */
+  --white-bg: #fafafa;
+  --black-bg: #333;
+  
+
+  
+  /* Typography */
+  --button-font-size: 26px;
+  --body-font-size: 14px;
+  --body-font-family: 'Lato', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {    
+    background: var(--black-bg);
+    color: var(--very-dark-grayish-blue);
+    overflow-x: hidden;
+    font-family: var(--body-font-family);
+}
+
+.container {
+    background: var(--white-bg);
+    transform-origin: top left;
+    transition: transform 0.5s linear;
+    min-height: 100vh;
+    width: 100vw;
+    padding: 5%;
+    padding-top: 100px;
+}
+
+.container.show-nav {
+    transform:rotate(-20deg);
+}
+
+.container.show-nav + nav li {
+    transform: translateX(0);
+    transition-delay: 0.3s;
+}
+
+img {
+    max-width: 100%;
+}
+
+.circle-container {
+    position: fixed;
+    top: -100px;
+    left: -100px;
+}
+
+
+.circle {
+    width: 200px;
+    height: 200px;
+    background: #ff7979;
+    border-radius: 50%;
+    position: relative;
+    transition: transform 0.5s linear;
+}
+
+.circle button:focus {
+    outline: none;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 50px;
+    color: #fff;
+    font-size: var(--button-font-size);
+    background: transparent;
+    border: 0;
+}
+
+button#open {
+    left: 63%;
+    top: 55%;
+}
+
+button#close {
+    top: 65%;
+    transform: rotate(90deg);
+    transform-origin: top left;
+    left: 45%;
+}
+
+.content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+nav {
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    z-index: 1000;
+    
+}
+
+nav ul {
+    list-style-type: none;
+    padding-left: 30px;
+}
+
+nav ul li {
+    color: #fff;
+    font-size: 20px;
+    margin: 40px 0;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in;
+}
+
+nav ul li i {
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+nav ul li + li {
+    margin-left: 15px;
+    transform: translateX(-150%);
+}
+
+nav ul li + li + li {
+    margin-left: 30px;
+    transform: translateX(-200%);
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.content small {
+    font-style: italic;
+    color: var(--very-dark-desaturated-blue);
+}
+
+.content p {
+    line-height: 1.5;
+    margin: 5px 0;
+    color: #555;
+}
+
+h2 {
+    margin: 10px 0;
+}
